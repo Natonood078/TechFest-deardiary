@@ -47,23 +47,7 @@ def main(page: ft.Page):
         suffix=showpassword
     )
 
-    confirmPassword = ft.ElevatedButton("🔒 Confirm here.", visible=False, on_click=confirmPassworddef)
-    confirmPassword2 = ft.ElevatedButton("✅ Confirm here.", visible=False, on_click=newpassword)
-
-    addtextButton = ft.ElevatedButton("📝 New entry to your diary", visible=False, on_click=newentry)
-    seediarybutton = ft.ElevatedButton("📖 See your diary", visible=False, on_click= seediary)
-    deleteentrysbutton = ft.ElevatedButton("🗑️ Delete entries", visible=False, on_click=deleteentrys)
-    exitButton = ft.ElevatedButton("🚪 Exit", visible=False, on_click=exit)
-
-    entrytextfield = ft.TextField(label="Your diary entry", visible=False, multiline=True, width=400, height=100)
-    submitentrybutton = ft.ElevatedButton("📤 Submit", visible=False, on_click=addentry)
-
-    diarytextflet = ft.Text("", visible=False)
-    backbutton = ft.ElevatedButton("🔙 Back", visible=False, on_click=back)
-
-    deleteinfo = ft.Text("", visible=False)
-    entrynumbertextfield = ft.TextField(label="Number of entry to delete", visible=False)
-    confirmdeletebutton = ft.ElevatedButton("🗑️ Delete", visible=False, on_click=confirmdelete)
+    
 
     def newpassword(e):
         with open("password.txt", "w", encoding="UTF-8") as file:
@@ -203,7 +187,23 @@ def main(page: ft.Page):
     def exit(e):
         page.window.close()
 
+    confirmPassword = ft.ElevatedButton("🔒 Confirm here.", visible=False, on_click=confirmPassworddef)
+    confirmPassword2 = ft.ElevatedButton("✅ Confirm here.", visible=False, on_click=newpassword)
 
+    addtextButton = ft.ElevatedButton("📝 New entry to your diary", visible=False, on_click=newentry)
+    seediarybutton = ft.ElevatedButton("📖 See your diary", visible=False, on_click= seediary)
+    deleteentrysbutton = ft.ElevatedButton("🗑️ Delete entries", visible=False, on_click=deleteentrys)
+    exitButton = ft.ElevatedButton("🚪 Exit", visible=False, on_click=exit)
+
+    entrytextfield = ft.TextField(label="Your diary entry", visible=False, multiline=True, width=400, height=100)
+    submitentrybutton = ft.ElevatedButton("📤 Submit", visible=False, on_click=addentry)
+
+    diarytextflet = ft.Text("", visible=False)
+    backbutton = ft.ElevatedButton("🔙 Back", visible=False, on_click=back)
+
+    deleteinfo = ft.Text("", visible=False)
+    entrynumbertextfield = ft.TextField(label="Number of entry to delete", visible=False)
+    confirmdeletebutton = ft.ElevatedButton("🗑️ Delete", visible=False, on_click=confirmdelete)
 
     if os.path.exists("password.txt"):
         passwordQuestion2.label = "Input your password here."
